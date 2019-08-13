@@ -39,7 +39,7 @@ class ExampleCommand : public Command {
       if (argList.noCll()) { // Checks if command spelling is right
           std::cout << "Command has false spelling." << std::endl;
         } else {
-          Argument arg = findBoth("t", "test"); // Checks if command has a ``-t`` or ``--test`` parameter
+          Argument arg = findBoth("t", "test"); // Checks if command has a ``-t`` or ``--test`` parameter (if findBoth didn't find anything arg.validation would be Argument::ArgumentValidation::INVALID)
           // For example you could get the arguments from the parameters with arg.getArg() wich would return a vector with strings
       }
     }
